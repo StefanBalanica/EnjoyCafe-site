@@ -1,0 +1,143 @@
+<div class="TopMenu" [ngClass]="{ 'scrolled': isScrolled }">
+  <div class="menu">
+    <ul>
+      <li><button class="buttonStyle">Home</button></li>
+      <li><button class="buttonStyle">Coffee</button></li>
+      <li><button class="buttonStyle shop" (click)="toggleCartPopup()">Shop</button></li>
+      <li><button class="buttonStyle">About</button></li>
+    </ul>
+  </div>
+  <div class="search">
+    <input type="text" placeholder="🔍︎" />
+  </div>
+</div>
+
+<div class="temporary-popup" *ngIf="showTemporaryPopup">
+  <img [src]="temporaryPopupData?.image" [alt]="temporaryPopupData?.title" class="popup-image" />
+  <div class="popup-details">
+    <h3 class="popup-title">{{ temporaryPopupData?.title }}</h3>
+    <span class="popup-price">{{ temporaryPopupData?.price }}</span>
+  </div>
+</div>
+
+<div class="cart-popup" *ngIf="showCartPopup">
+  <div class="cart-popup-content">
+    <button class="close-btn" (click)="toggleCartPopup()">X</button>
+    <h2>Your Cart</h2>
+    <div class="cart-items">
+      <div class="cart-item" *ngFor="let item of cartItems">
+        <img [src]="item.image" [alt]="item.title" class="cart-item-image" />
+        <div class="cart-item-details">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+          <span class="price">{{ item.price }}</span>
+        </div>
+      </div>
+    </div>
+    <h3 class="total">Total: {{ total }} LEI</h3>
+  </div>
+</div>
+  
+<div class="wrapper">
+    <h1 id="text">En<span class="green"> joy </span>&nbsp;café <br>  Taste the Art of <br>Roasted Perfection.</h1>
+    <button class="btn" (click)="scrollToHotCoffee()">Order now</button>
+  </div>
+  <div class="GreenBanner">
+    <ul>
+      <li><button class="ProductsButtons" id="btn1" (click)="scrollToHotCoffee()">.</button></li>
+      <li><button class="ProductsButtons" id="btn2"(click)="scrollToIceCoffee()">.</button></li>
+      <li><button class="ProductsButtons" id="btn3" (click)="scrollToFresh()">.</button></li>
+      <li><button class="ProductsButtons" id="btn4" (click)="scrollToMK()">.</button></li>
+    </ul>
+  </div>
+
+
+  
+  <div id="hotcoffe">
+    <br>  <br>
+    <h2 class="section-title">Our Special Hot Coffee</h2>
+
+    <div class="carousel-wrapper" id="hotcoffeeCarousel">
+      <button class="nav left" (click)="scrollLeft(coffeeContainer)">&#10094;</button>
+  
+    <div class="carousel" #coffeeContainer>
+      <app-coffee-card
+        *ngFor="let coffee of coffees"
+        [coffee]="coffee"
+        (onOrderNow)="onOrderNow($event)"
+        class="card-wrapper">
+      </app-coffee-card>
+    </div>
+    
+    <button class="nav right" (click)="scrollRight(coffeeContainer)">&#10095;</button>
+  </div>
+</div>
+
+<div id="icecoffe">
+  <br>  <br><br>  <br>
+  <h2 class="section-title">Our Special Ice Coffee</h2>
+  <div class="carousel-wrapper">
+    <button class="nav left" (click)="scrollLeft(IcecoffeeContainer)">&#10094;</button>
+  
+    <div class="carousel" #IcecoffeeContainer>
+      <app-coffee-card
+        *ngFor="let coffee of iceCoffees"
+        [coffee]="coffee"
+        (onOrderNow)="onOrderNow($event)"
+        class="card-wrapper">
+      </app-coffee-card>
+    </div>
+  
+    <button class="nav right" (click)="scrollRight(IcecoffeeContainer)">&#10095;</button>
+  </div>
+</div>
+
+<div id="fresh">
+  <br>  <br><br>  <br>
+  <h2 class="section-title">Our Special Fresh</h2>
+  <div class="carousel-wrapper">
+    <button class="nav left" (click)="scrollLeft(FreshContainer)">&#10094;</button>
+  
+    <div class="carousel" #FreshContainer>
+      <app-coffee-card
+        *ngFor="let fresh of fresh"
+        [coffee]="fresh"
+        (onOrderNow)="onOrderNow($event)"
+        class="card-wrapper">
+      </app-coffee-card>
+    </div>
+  
+    <button class="nav right" (click)="scrollRight(FreshContainer)">&#10095;</button>
+  </div>
+</div>
+
+<div id="milkshake">
+  <br>  <br><br>  <br>
+  <h2 class="section-title">Our Special Milkshakes</h2>
+  <div class="carousel-wrapper">
+    <button class="nav left" (click)="scrollLeft(milkshakeContainer)">&#10094;</button>
+  
+    <div class="carousel" #milkshakeContainer>
+      <app-coffee-card
+        *ngFor="let milkshake of milkshake"
+        [coffee]="milkshake"
+        (onOrderNow)="onOrderNow($event)"
+        class="card-wrapper">
+      </app-coffee-card>
+    </div>
+  
+    <button class="nav right" (click)="scrollRight(milkshakeContainer)">&#10095;</button>
+  </div>
+</div>
+
+<div class="footer">
+    <div class="footer-content">
+      <h2>En<span class="green"> joy </span>&nbsp;café</h2>
+      <p>Coresi Shopping Resort, Brasov</p>
+      </div>
+      
+</div>
+
+
+  
+  

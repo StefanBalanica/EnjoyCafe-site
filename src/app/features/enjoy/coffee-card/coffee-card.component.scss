@@ -1,0 +1,76 @@
+.coffee-card {
+    width: 240px;
+    background-color: #f9f4ef;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-image {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+  
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  
+    .like-button {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: white;
+      border: none;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+  }
+  
+  .card-body {
+    padding: 16px;
+  
+    h3 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  
+    .description {
+      font-size: 13px;
+      color: #666;
+      margin-top: 4px;
+      margin-bottom: 16px;
+    }
+  
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+      .price {
+        font-weight: bold;
+        color: #333;
+      }
+  
+      .order-button {
+        background-color: #3e2f1c;
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 13px;
+      }
+    }
+  }
+  

@@ -1,0 +1,451 @@
+* {
+  margin: -8px;
+  padding: 0;
+  box-sizing: border-box;
+  }
+  
+
+  .TopMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.2s ease;
+  
+  &.scrolled {
+    background-color: #3e2f1d;
+    transition: background-color 0.2s ease;
+  }
+  }
+  
+  .menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 40px;
+  }
+  
+  .menu li {
+  display: inline;
+  }
+  
+  .buttonStyle {
+  background-color: transparent;
+  color: #d0d0d0;
+  border: 2px solid transparent;
+  padding: 16px 32px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  }
+  
+  .buttonStyle:hover {
+  background-color:#d0d0d0; 
+  color: black;
+  border: 2px solid #d0d0d0;
+  }
+  
+  .search {
+  position: relative;
+  left: 100px;
+  }
+  .search input[type="text"] {
+  padding: 8px 12px;
+  border-radius: 50px;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  outline: none;
+  font-size: 15px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .search input[type="text"]:focus {
+  border-color: #888;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+  }
+
+.wrapper {
+  position: relative;
+  background-image: url("/img.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  padding-top: 20%;
+  padding-left: 13%;
+  height: 85vh;
+  overflow: hidden;
+  }
+
+  #text {
+  position: relative;
+  color: #d0d0d0;
+  font-size: 3rem;
+  text-align: left;
+  letter-spacing: 1px; 
+  font-family: 'Playfair Display', serif;
+}
+  .green {
+  color: #5cbf2a;
+  }
+  .btn {
+  position: relative;
+  top: 20px;
+  left: -10px;
+  padding: 14px 30px; 
+  font-size: 20px;
+  font-family: 'Playfair Display', serif;
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 30px; 
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color:#d0d0d0; 
+  color: black;
+  border: 2px solid #d0d0d0;
+}
+.GreenBanner{
+  position: relative;
+  background-image: url("/banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  height: 17vh;
+  box-shadow: 0px -10px 100px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+
+}
+.GreenBanner ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 350px;
+}
+.GreenBanner li {
+  display: inline;
+}
+
+.ProductsButtons{
+  position: relative;
+  padding: 60px 60px;
+  background-color: transparent;
+  border: 2px solid transparent;
+  top: 20px;
+  left: 250px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.ProductsButtons:hover {
+  background-color:#3e2f1d; 
+}
+
+#btn1{
+  background-image: url("/cafea.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+}
+#btn2{
+  background-image: url("/icecofee.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+}
+#btn3{
+  background-image: url("/fresh.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+}
+#btn4{
+  background-image: url("/milkshake.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+}
+.card-list {
+  position: relative;
+  top: 20px;
+  left: 270px;
+  display: flex;
+  justify-content: center; 
+  gap: 50px;
+  flex-wrap: wrap;
+  padding: 60px;
+  width: 70%; 
+  box-sizing: border-box; 
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  max-width: 1060px;
+  margin: 0 auto;
+ 
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 50px;
+  padding: 10px;
+  width: max-content;
+  overflow: hidden;
+}
+
+.card-wrapper {
+  flex: 0 0 auto;
+  width: 240px;
+}
+
+.nav {
+  position: relative;
+  background: #f4f4f4;
+  border: none;
+  font-size: 24px;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left {
+  margin-right: 10px;
+}
+
+.right {
+  margin-left: 10px;
+}
+
+
+
+.footer {
+  position: relative;
+  margin-top: 150px; 
+
+  background-color: #3e2f1d; 
+  color: #d0d0d0; 
+  padding: 20px 0;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.5); 
+
+  .footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+  }
+
+  h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  }
+
+  p {
+  font-size: 16px;
+  margin: 0;
+  color: #d0d0d0;
+  }
+
+
+  @media (max-width: 768px) {
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+  }
+}
+
+
+
+
+.cart-popup {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  width: 450px;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+
+  .cart-popup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #3e2f1d;
+  }
+
+  .cart-items {
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+  }
+
+  .cart-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+      background-color: #f9f9f9;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+      .cart-item-image {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .cart-item-details {
+        display: contents;
+        flex-direction: column;
+        justify-content: center; 
+        gap: 5px;
+
+        h3 {
+          font-size: 18px;
+          margin: 0;
+          color: #3e2f1d;
+        }
+
+        p {
+          font-size: 14px;
+          margin: 0;
+          color: #666;
+        }
+
+        .price {
+          font-size: 16px;
+          font-weight: bold;
+          color: #5cbf2a; // Verdele folosit în alte elemente
+        }
+      }
+    }
+
+    .total {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      color: #3e2f1d;
+    }
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #666;
+
+    &:hover {
+      color: #000;
+    }
+  }
+}
+
+.temporary-popup {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 45px; /* Reduce spațiul dintre imagine și detalii */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  padding: 10px 15px;
+  font-family: 'Poppins', sans-serif;
+  max-width: 350px; /* Lățime maximă pentru pop-up */
+  z-index: 2000;
+  animation: fadeInOut 4s ease-in-out;
+
+  .popup-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .popup-details {
+    display: contents;
+    flex-direction: column;
+    justify-content: center; /* Centrează vertical textul */
+    gap: 5px;
+
+    .popup-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #3e2f1d; /* Maro pentru a se potrivi cu tema cafenelei */
+      margin: 0;
+      white-space: nowrap; /* Previne textul să treacă pe linia următoare */
+      overflow: hidden;
+      text-overflow: ellipsis; /* Adaugă "..." dacă textul este prea lung */
+    }
+
+    .popup-price {
+      font-size: 14px;
+      color: #5cbf2a; /* Verdele folosit în alte elemente */
+      font-weight: bold;
+    }
+  }
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  10%, 90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
