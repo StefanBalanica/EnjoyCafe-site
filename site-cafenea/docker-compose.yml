@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  # MongoDB pentru development local
+  mongodb:
+    image: mongo:7.0
+    container_name: enjoy-cafe-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: enjoycafe
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - enjoy-cafe-network
+
+  # Backend API
+  api:
+    build: ./enjoy-cafe-api
+    container_name: enjoy-cafe-api
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      NODE_ENV: development
+      PORT: 5000
+      MONGO_URL: mongodb://admin:password@mongodb:27017/enjoycafe?authSource=admin
+      JWT_SECRET: your_super_secret_jwt_key_for_development
+      FRONTEND_URL: http://localhost:4200
+      ADMIN_EMAIL: admin@enjoycafe.ro
+      ADMIN_PASS: admin123!
+    depends_on:
+      - mongodb
+    networks:
+      - enjoy-cafe-network
+    volumes:
+      - ./enjoy-cafe-api:/app
+      - /app/node_modules
+
+  # Frontend (opțional pentru development complet)
+  frontend:
+    build: ./enjoy-cafe
+    container_name: enjoy-cafe-frontend
+    restart: unless-stopped
+    ports:
+      - "4200:4200"
+    environment:
+      API_URL: http://localhost:5000/api
+    depends_on:
+      - api
+    networks:
+      - enjoy-cafe-network
+    volumes:
+      - ./enjoy-cafe:/app
+      - /app/node_modules
+
+volumes:
+  mongodb_data:
+
+networks:
+  enjoy-cafe-network:
+    driver: bridge
+
+
