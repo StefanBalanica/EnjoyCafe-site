@@ -1,0 +1,77 @@
+<footer class="bg-[var(--ec-surface)]/95 backdrop-blur-sm border-t border-[var(--ec-border)] py-12 shadow-soft rounded-t-3xl relative z-10 text-[var(--ec-text)]">
+  <div class="container mx-auto px-6">
+        <div class="h-1 w-24 mx-auto rounded-full bg-gradient-to-r from-emerald-400 to-emerald-600 mb-6 opacity-80"></div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Program & Adresă -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4 text-emerald-600">Enjoy Cafe</h3>
+        <div class="space-y-2 text-[var(--ec-muted)]">
+          <p><span class="material-icons inline-block mr-2 text-sm">schedule</span>Luni - Duminică: 10:00 - 22:00</p>
+          <p><span class="material-icons inline-block mr-2 text-sm">location_on</span>Coresi Shopping Resort<br>Strada Zaharia Stancu nr1<br>Brașov<br>România</p>
+        </div>
+      </div>
+
+      <!-- Social -->
+      <div>
+        <h3 class="text-xl font-semibold mb-6 text-emerald-600">Urmărește-ne</h3>
+        <div class="flex flex-col space-y-4">
+          <!-- Facebook -->
+          <a 
+            href="https://www.facebook.com/enjoycafecoresi" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="flex items-center space-x-3 p-3 rounded-xl bg-blue-50 hover:bg-blue-100 transition-all duration-300 group"
+            title="Facebook Enjoy Cafe">
+            <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-medium text-[var(--ec-text)] group-hover:text-blue-600">Facebook</p>
+              <p class="text-sm text-[var(--ec-muted)]">&#64;enjoycafecoresi</p>
+            </div>
+          </a>
+
+          <!-- Instagram -->
+          <a 
+            href="https://www.instagram.com/enjoycafecoresi?igsh=MTg2bXJ2MDFsampmcQ==" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="flex items-center space-x-3 p-3 rounded-xl bg-gradient-to-r from-pink-50 to-purple-50 hover:from-pink-100 hover:to-purple-100 transition-all duration-300 group"
+            title="Instagram Enjoy Cafe">
+            <div class="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987s11.987-5.367 11.987-11.987C24.014 5.367 18.647.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297C4.198 14.895 3.708 13.744 3.708 12.447s.49-2.448 1.418-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.928.875 1.418 2.026 1.418 3.323s-.49 2.448-1.418 3.244c-.875.807-2.026 1.297-3.323 1.297zm7.83-9.281H7.83c-.49 0-.928.39-.928.928v7.83c0 .49.39.928.928.928h8.449c.49 0 .928-.39.928-.928v-7.83c0-.49-.39-.928-.928-.928z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-medium text-[var(--ec-text)] group-hover:text-pink-600">Instagram</p>
+              <p class="text-sm text-[var(--ec-muted)]">&#64;enjoycafecoresi</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Link Admin -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4 text-emerald-600">Contact</h3>
+        <div class="space-y-2 text-[var(--ec-muted)]">
+          <p>📧 hello&#64;enjoycafe.ro</p>
+          <p>📞 +40 21 123 4567</p>
+          <a 
+            routerLink="/login" 
+            class="text-[var(--ec-muted)] hover:text-[var(--ec-text)] text-sm transition-colors">
+            Admin
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-[var(--ec-border)] mt-8 pt-8 text-center text-[var(--ec-muted)]">
+      <p>&copy; {{ currentYear }} Enjoy Cafe. Toate drepturile rezervate.</p>
+    </div>
+  </div>
+</footer>

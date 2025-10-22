@@ -1,0 +1,127 @@
+<div class="pt-24 pb-16">
+  <div class="container mx-auto px-6">
+    <!-- Header -->
+    <div class="flex items-center justify-between mb-8">
+      <div>
+        <h1 class="text-3xl font-bold mb-2">Administrare produse</h1>
+        <p class="text-white/70">Gestionează meniul Enjoy Cafe</p>
+      </div>
+      <div class="flex items-center gap-4">
+        <button 
+          class="btn-primary"
+          (click)="createProduct()">
+          <span class="material-icons mr-2">add</span>
+          Adaugă produs
+        </button>
+        <button 
+          class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-xl transition-colors duration-200 flex items-center gap-2"
+          (click)="logout()">
+          <span class="material-icons">logout</span>
+          Logout
+        </button>
+      </div>
+    </div>
+
+    <!-- Products Table -->
+    <div class="ec-card p-6 shadow-soft">
+      <div *ngIf="isLoading" class="text-center py-8">
+        <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-ec-400"></div>
+        <p class="mt-2 text-white/60">Se încarcă produsele...</p>
+      </div>
+
+      <div *ngIf="!isLoading && dataSource.length === 0" class="text-center py-8">
+        <span class="material-icons text-6xl text-white/40 mb-4">inventory_2</span>
+        <h3 class="text-xl font-semibold mb-2">Niciun produs</h3>
+        <p class="text-white/60 mb-4">Nu există produse în meniu. Adaugă primul produs!</p>
+        <button class="btn-primary" (click)="createProduct()">
+          Adaugă primul produs
+        </button>
+      </div>
+
+      <table *ngIf="!isLoading && dataSource.length > 0" mat-table [dataSource]="dataSource" class="w-full">
+        <!-- Image Column -->
+        <ng-container matColumnDef="image">
+          <th mat-header-cell *matHeaderCellDef>Imagine</th>
+          <td mat-cell *matCellDef="let product">
+            <img 
+              [src]="product.image" 
+              [alt]="product.name"
+              class="w-12 h-12 object-cover rounded-xl"
+            />
+          </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Nume</th>
+          <td mat-cell *matCellDef="let product">{{ product.name }}</td>
+        </ng-container>
+
+        <!-- Price Column -->
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef>Preț</th>
+          <td mat-cell *matCellDef="let product">{{ product.price }} lei</td>
+        </ng-container>
+
+        <!-- Category Column -->
+        <ng-container matColumnDef="category">
+          <th mat-header-cell *matHeaderCellDef>Categorie</th>
+          <td mat-cell *matCellDef="let product">
+            <span class="px-3 py-1 rounded-xl bg-ec-700/60 border border-white/10 text-sm">
+              {{ product.category }}
+            </span>
+          </td>
+        </ng-container>
+
+        <!-- Featured Column -->
+        <ng-container matColumnDef="featured">
+          <th mat-header-cell *matHeaderCellDef>Recomandat</th>
+          <td mat-cell *matCellDef="let product">
+            <span *ngIf="product.featured" class="material-icons text-ec-400">star</span>
+            <span *ngIf="!product.featured" class="material-icons text-white/40">star_border</span>
+          </td>
+        </ng-container>
+
+        <!-- Actions Column -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef class="text-right">Acțiuni</th>
+          <td mat-cell *matCellDef="let product" class="text-right">
+            <button 
+              mat-stroked-button 
+              class="mr-2"
+              (click)="editProduct(product)">
+              <span class="material-icons mr-1">edit</span>
+              Editează
+            </button>
+            <button 
+              mat-stroked-button 
+              color="warn"
+              (click)="deleteProduct(product)">
+              <span class="material-icons mr-1">delete</span>
+              Șterge
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns" class="border-b border-white/10"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="hover:bg-white/5 transition-colors"></tr>
+      </table>
+    </div>
+
+    <!-- Stats -->
+    <div *ngIf="!isLoading && dataSource.length > 0" class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="ec-card p-4 text-center">
+        <div class="text-2xl font-bold text-ec-400">{{ totalCount }}</div>
+        <div class="text-white/70">Total produse</div>
+      </div>
+      <div class="ec-card p-4 text-center">
+        <div class="text-2xl font-bold text-ec-400">{{ featuredCount }}</div>
+        <div class="text-white/70">Produse recomandate</div>
+      </div>
+      <div class="ec-card p-4 text-center">
+        <div class="text-2xl font-bold text-ec-400">{{ averagePrice | number:'1.0-0' }}</div>
+        <div class="text-white/70">Preț mediu (lei)</div>
+      </div>
+    </div>
+  </div>
+</div>

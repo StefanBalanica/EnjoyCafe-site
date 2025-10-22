@@ -1,0 +1,11 @@
+:host {
+  display: block;
+}
+
+footer {
+  /* mică ridicare vizuală */
+  box-shadow: 0 -8px 30px rgba(2,6,23,0.25);
+}
+
+/* optimize link hover */
+a:hover { text-decoration: none; }

@@ -1,0 +1,107 @@
+<div class="pt-24 pb-16 relative overflow-hidden">
+  <!-- Colorful background -->
+  <div class="absolute inset-0">
+    <div class="absolute top-10 left-10 w-96 h-96 rounded-full blur-3xl opacity-60" style="background: radial-gradient(circle, rgba(236,72,153,0.8) 0%, rgba(244,63,94,0.6) 50%, transparent 70%);"></div>
+    <div class="absolute top-20 right-20 w-80 h-80 rounded-full blur-3xl opacity-50" style="background: radial-gradient(circle, rgba(59,130,246,0.8) 0%, rgba(14,165,233,0.6) 50%, transparent 70%);"></div>
+    <div class="absolute bottom-20 left-1/4 w-72 h-72 rounded-full blur-3xl opacity-60" style="background: radial-gradient(circle, rgba(139,92,246,0.8) 0%, rgba(168,85,247,0.6) 50%, transparent 70%);"></div>
+    <div class="absolute bottom-10 right-1/3 w-88 h-88 rounded-full blur-3xl opacity-50" style="background: radial-gradient(circle, rgba(16,185,129,0.8) 0%, rgba(34,197,94,0.6) 50%, transparent 70%);"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full blur-3xl opacity-40" style="background: radial-gradient(circle, rgba(245,158,11,0.8) 0%, rgba(249,115,22,0.6) 50%, transparent 70%);"></div>
+    <div class="absolute top-1/3 right-1/4 w-56 h-56 rounded-full blur-3xl opacity-50" style="background: radial-gradient(circle, rgba(20,184,166,0.8) 0%, rgba(45,212,191,0.6) 50%, transparent 70%);"></div>
+  </div>
+  
+  <div class="container mx-auto px-6 relative">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold mb-4">Meniul Enjoy Cafe</h1>
+      <p class="text-[var(--ec-muted)] max-w-2xl mx-auto">
+        Descoperă varietatea noastră de băuturi și deserturi, preparate cu ingrediente de calitate superioară.
+      </p>
+    </div>
+
+    <!-- Filters -->
+    <div class="ec-card p-6 mb-8">
+      <div class="flex items-center gap-4 overflow-x-auto">
+        <!-- Search -->
+        <div class="flex-1 min-w-48">
+          <input 
+            [(ngModel)]="search"
+            placeholder="Caută produse..." 
+            class="form-input"
+          />
+        </div>
+
+        <!-- Category Filter -->
+        <select 
+          [(ngModel)]="selectedCategory"
+          class="form-input w-40">
+          <option *ngFor="let cat of categories" [value]="cat.value">
+            {{ cat.label }}
+          </option>
+        </select>
+
+        <!-- Sort -->
+        <select 
+          [(ngModel)]="sortBy"
+          class="form-input w-40">
+          <option *ngFor="let sort of sortOptions" [value]="sort.value">
+            {{ sort.label }}
+          </option>
+        </select>
+
+        <!-- Clear Filters -->
+        <button 
+          (click)="clearFilters()"
+          class="px-4 py-3 rounded-2xl border border-[var(--ec-border)] hover:border-ec-400 transition-colors text-[var(--ec-muted)] hover:text-[var(--ec-text)] whitespace-nowrap">
+          Resetează
+        </button>
+      </div>
+    </div>
+
+    <!-- Results Count -->
+    <div class="mb-6">
+      <p class="text-[var(--ec-muted)]">
+        Afișez {{ filteredProducts.length }} produse în {{ groupedProducts.length }} categorii
+        <span *ngIf="search || selectedCategory !== 'toate'">
+          (filtrate din {{ products.length }})
+        </span>
+      </p>
+    </div>
+
+    <!-- Grouped Products -->
+    <div *ngIf="groupedProducts.length > 0">
+      <div *ngFor="let group of groupedProducts" class="mb-12">
+        <!-- Category Header -->
+        <div class="flex items-center gap-3 mb-6">
+          <span class="text-3xl">{{ group.group.icon }}</span>
+          <h2 class="text-2xl font-bold text-[var(--ec-text)]">{{ group.group.title }}</h2>
+          <div class="flex-1 h-px bg-gradient-to-r from-[var(--ec-border)] to-transparent"></div>
+          <span class="text-sm text-[var(--ec-muted)] bg-[var(--ec-bg-soft)] px-3 py-1 rounded-full">
+            {{ group.products.length }} produse
+          </span>
+        </div>
+
+        <!-- Products Grid for this category -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <app-product-card 
+            *ngFor="let product of group.products" 
+            [product]="product">
+          </app-product-card>
+        </div>
+      </div>
+    </div>
+
+    <!-- No Results -->
+    <div *ngIf="groupedProducts.length === 0" class="text-center py-12">
+      <div class="ec-card p-8 max-w-md mx-auto">
+        <span class="material-icons text-6xl text-[var(--ec-muted)] mb-4">search_off</span>
+        <h3 class="text-xl font-semibold mb-2">Nu am găsit produse</h3>
+        <p class="text-[var(--ec-muted)] mb-4">Încearcă să modifici filtrele sau să cauți altceva.</p>
+        <button 
+          (click)="clearFilters()"
+          class="btn-primary">
+          Resetează filtrele
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

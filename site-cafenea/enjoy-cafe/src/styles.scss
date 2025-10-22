@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Default = LIGHT theme */
+:root {
+  --ec-bg: #ffffff;
+  --ec-bg-rgb: 255, 255, 255;
+  --ec-surface: #ffffff;
+  --ec-text: #0b1220;
+  --ec-muted: #334155;
+  --ec-border: rgba(2,6,23,.12);
+  --ec-grad: linear-gradient(135deg, #10b981 0%, #22c55e 40%, #34d399 100%);
+}
+
+/* Dark theme (aplică clasa .dark pe <html> pentru fallback) */
+.dark {
+  --ec-bg: #071026;        /* dark page background */
+  --ec-bg-rgb: 7, 16, 38;
+  --ec-surface: #071425;   /* cards / surfaces */
+  --ec-text: #e6eef8;      /* main text (light) */
+  --ec-muted: #9ca3af;
+  --ec-border: rgba(255,255,255,0.04);
+  --ec-grad: linear-gradient(135deg, #34d399 0%, #22c55e 40%, #10b981 100%);
+}
+
+/* Map Tailwind/class usage already present in templates */
+html, body {
+  height: 100%;
+  background: var(--ec-bg);
+  color: var(--ec-text);
+  font-family: 'Inter', 'Poppins', sans-serif;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.ec-card {
+  background: var(--ec-surface);
+  border: 1px solid var(--ec-border);
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 24px rgba(2, 6, 23, 0.06);
+}
+
+.btn-primary {
+  @apply px-5 py-3 rounded-2xl font-medium text-white transition-all;
+  box-shadow: 0 8px 24px rgba(22,163,74,.35);
+  background-image: var(--ec-grad);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 12px 40px rgba(16,185,129,.6);
+}
+
+.animate-floaty {
+  animation: floaty 5s ease-in-out infinite;
+}
+
+.animate-fadeUp {
+  animation: fadeUp 600ms ease-out both;
+}
+
+.ec-dialog .mat-mdc-dialog-container {
+  background: var(--ec-surface) !important;
+  border: 1px solid var(--ec-border);
+  border-radius: 1.25rem;
+}
+
+body { margin: 0; }
+
+/* Form styles that adapt to theme */
+.form-label {
+  @apply block text-sm font-medium mb-2;
+  color: var(--ec-muted);
+}
+
+.form-input {
+  @apply w-full px-4 py-3 rounded-2xl border transition-colors focus:outline-none;
+  background: var(--ec-surface);
+  border-color: var(--ec-border);
+  color: var(--ec-text);
+}
+
+.form-input::placeholder {
+  color: var(--ec-muted);
+}
+
+.form-input:focus {
+  border-color: var(--ec-400);
+}
+
+.text-muted {
+  color: var(--ec-muted);
+}
+
+/* Header with theme-aware transparency */
+.header-transparent {
+  background: rgba(var(--ec-bg-rgb), 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}

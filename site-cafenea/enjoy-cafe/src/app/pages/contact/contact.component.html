@@ -1,0 +1,165 @@
+<div class="pt-24 pb-16 relative overflow-hidden">
+  <!-- Colorful background -->
+  <div class="absolute inset-0">
+    <div class="absolute top-10 left-10 w-96 h-96 rounded-full blur-3xl opacity-60" style="background: radial-gradient(circle, rgba(236,72,153,0.8) 0%, rgba(244,63,94,0.6) 50%, transparent 70%);"></div>
+    <div class="absolute top-20 right-20 w-80 h-80 rounded-full blur-3xl opacity-50" style="background: radial-gradient(circle, rgba(59,130,246,0.8) 0%, rgba(14,165,233,0.6) 50%, transparent 70%);"></div>
+    <div class="absolute bottom-20 left-1/4 w-72 h-72 rounded-full blur-3xl opacity-60" style="background: radial-gradient(circle, rgba(139,92,246,0.8) 0%, rgba(168,85,247,0.6) 50%, transparent 70%);"></div>
+    <div class="absolute bottom-10 right-1/3 w-88 h-88 rounded-full blur-3xl opacity-50" style="background: radial-gradient(circle, rgba(16,185,129,0.8) 0%, rgba(34,197,94,0.6) 50%, transparent 70%);"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full blur-3xl opacity-40" style="background: radial-gradient(circle, rgba(245,158,11,0.8) 0%, rgba(249,115,22,0.6) 50%, transparent 70%);"></div>
+    <div class="absolute top-1/3 right-1/4 w-56 h-56 rounded-full blur-3xl opacity-50" style="background: radial-gradient(circle, rgba(20,184,166,0.8) 0%, rgba(45,212,191,0.6) 50%, transparent 70%);"></div>
+  </div>
+  
+  <div class="container mx-auto px-6 relative">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold mb-4">Contactează-ne</h1>
+      <p class="text-[var(--ec-muted)] max-w-2xl mx-auto">
+        Ai întrebări? Vrei să rezervezi o masă? Sau pur și simplu vrei să ne spui ceva? Suntem aici pentru tine!
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12">
+      <!-- Contact Form -->
+      <div class="ec-card p-8">
+        <h2 class="text-2xl font-semibold mb-6">Trimite-ne un mesaj</h2>
+        
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
+          <!-- Name Field -->
+          <div>
+            <label for="name" class="form-label">
+              Numele tău *
+            </label>
+            <input
+              id="name"
+              type="text"
+              formControlName="name"
+              class="form-input"
+              placeholder="Introdu numele tău"
+            />
+            <div *ngIf="getFieldError('name')" class="text-red-600 text-sm mt-1">
+              {{ getFieldError('name') }}
+            </div>
+          </div>
+
+          <!-- Email Field -->
+          <div>
+            <label for="email" class="form-label">
+              Adresa de email *
+            </label>
+            <input
+              id="email"
+              type="email"
+              formControlName="email"
+              class="form-input"
+              placeholder="exemplu@email.com"
+            />
+            <div *ngIf="getFieldError('email')" class="text-red-600 text-sm mt-1">
+              {{ getFieldError('email') }}
+            </div>
+          </div>
+
+          <!-- Message Field -->
+          <div>
+            <label for="message" class="form-label">
+              Mesajul tău *
+            </label>
+            <textarea
+              id="message"
+              formControlName="message"
+              rows="5"
+              class="form-input resize-none"
+              placeholder="Scrie mesajul tău aici..."
+            ></textarea>
+            <div *ngIf="getFieldError('message')" class="text-red-600 text-sm mt-1">
+              {{ getFieldError('message') }}
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            [disabled]="contactForm.invalid"
+            class="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <span *ngIf="!isSubmitted">Trimite mesajul</span>
+            <span *ngIf="isSubmitted">Mesaj trimis cu succes!</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Info & Map -->
+      <div class="space-y-8">
+        <!-- Contact Information -->
+        <div class="ec-card p-8">
+          <h2 class="text-2xl font-semibold mb-6">Informații de contact</h2>
+          
+          <div class="space-y-6">
+            <!-- Address -->
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-ec-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                <span class="material-icons text-ec-400">location_on</span>
+              </div>
+              <div>
+                <h3 class="font-semibold text-[var(--ec-text)]">Adresa</h3>
+                <p class="text-[var(--ec-muted)]">
+                  Coresi Shopping Resort<br>
+                  Strada Zaharia Stancu nr1<br>
+                  Brașov<br>
+                  România
+                </p>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-ec-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                <span class="material-icons text-ec-400">phone</span>
+              </div>
+              <div>
+                <h3 class="font-semibold text-[var(--ec-text)]">Telefon</h3>
+                <p class="text-[var(--ec-muted)]">+40 21 555 1234</p>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-ec-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                <span class="material-icons text-ec-400">email</span>
+              </div>
+              <div>
+                <h3 class="font-semibold text-[var(--ec-text)]">Email</h3>
+                <p class="text-[var(--ec-muted)]">contact&#64;enjoycafe.ro</p>
+              </div>
+            </div>
+
+            <!-- Hours -->
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-ec-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                <span class="material-icons text-ec-400">schedule</span>
+              </div>
+              <div>
+                <h3 class="font-semibold text-[var(--ec-text)]">Program</h3>
+                <div class="text-[var(--ec-muted)] space-y-1">
+                  <p>Luni - Duminică: 10:00 - 22:00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map Embedded -->
+        <div class="ec-card p-8">
+          <h2 class="text-2xl font-semibold mb-6">Locația noastră</h2>
+          <iframe 
+          title="Harta Enjoy Cafe"
+          class="w-full h-64 rounded-2xl border border-[var(--ec-border)]"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2748.186334308932!2d25.6109685!3d45.6725768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b35b59862cfa5f%3A0x7c7cb90d842cb7d0!2sEnjoy%20Cafe!5e0!3m2!1sen!2sro!4v1734800000000!5m2!1sen!2sro">
+      </iframe>
+      
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

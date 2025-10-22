@@ -1,0 +1,72 @@
+<header class="fixed top-0 left-0 right-0 z-50 header-transparent border-b border-[var(--ec-border)]">
+  <div class="container mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <h1 class="text-2xl font-bold text-emerald-600 cursor-pointer" (click)="navigateTo('/')">
+          Enjoy Cafe
+        </h1>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a 
+          routerLink="/" 
+          routerLinkActive="text-ec-300" 
+          class="text-[var(--ec-muted)] hover:text-emerald-600 transition-colors"
+          [routerLinkActiveOptions]="{exact: true}">
+          Acasă
+        </a>
+        <a 
+          routerLink="/meniu" 
+          routerLinkActive="text-ec-300" 
+          class="text-[var(--ec-muted)] hover:text-emerald-600 transition-colors">
+          Meniu
+        </a>
+        <a 
+          routerLink="/crazy-bubble" 
+          routerLinkActive="text-ec-300" 
+          class="text-[var(--ec-muted)] hover:text-emerald-600 transition-colors">
+          Crazy Bubble
+        </a>
+        <a 
+          routerLink="/despre" 
+          routerLinkActive="text-ec-300" 
+          class="text-[var(--ec-muted)] hover:text-emerald-600 transition-colors">
+          Despre
+        </a>
+        <a 
+          routerLink="/contact" 
+          routerLinkActive="text-ec-300" 
+          class="text-[var(--ec-muted)] hover:text-emerald-600 transition-colors">
+          Contact
+        </a>
+      </nav>
+
+      <!-- Theme Toggle & CTA Button -->
+      <div class="flex items-center space-x-4">
+        <!-- Theme Toggle Button -->
+        <button 
+          class="p-2 rounded-lg text-[var(--ec-muted)] hover:text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-all duration-200"
+          (click)="toggleTheme()"
+          [attr.aria-label]="themeService.isDark ? 'Switch to light theme' : 'Switch to dark theme'">
+          <span class="material-icons">
+            {{ themeService.isDark ? 'light_mode' : 'dark_mode' }}
+          </span>
+        </button>
+
+        <!-- CTA Button -->
+        <button 
+          class="btn-primary hidden sm:block"
+          (click)="navigateTo('/meniu')">
+          Vezi meniul
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden text-[var(--ec-text)]">
+          <span class="material-icons">menu</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

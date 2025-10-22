@@ -1,0 +1,18 @@
+<div class="ec-card p-4 shadow-soft hover:shadow-glow transition-all hover:-translate-y-1">
+  <img 
+    [src]="product.image" 
+    [alt]="product.name" 
+    class="w-full h-44 object-cover rounded-2xl mb-3"
+    loading="lazy"
+  />
+  <div class="flex items-center justify-between mb-1">
+    <h3 class="text-lg font-semibold text-[var(--ec-text)]">{{ product.name }}</h3>
+    <span class="px-3 py-1 rounded-xl bg-emerald-50 border border-[var(--ec-border)] text-emerald-700">
+      {{ product.price }} lei
+    </span>
+  </div>
+  <p class="opacity-90 text-sm mb-3 text-[var(--ec-muted)]">{{ product.description }}</p>
+  <button class="btn-primary w-full">
+    Comandă la bar
+  </button>
+</div>

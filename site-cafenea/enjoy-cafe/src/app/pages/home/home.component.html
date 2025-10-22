@@ -1,0 +1,107 @@
+<!-- Hero Section -->
+<section class="relative pt-24 pb-16 overflow-hidden">
+  <!-- Colorful background -->
+  <div class="absolute inset-0">
+    <div class="absolute top-10 left-10 w-96 h-96 rounded-full blur-3xl opacity-60" style="background: radial-gradient(circle, rgba(236,72,153,0.8) 0%, rgba(244,63,94,0.6) 50%, transparent 70%);"></div>
+    <div class="absolute top-20 right-20 w-80 h-80 rounded-full blur-3xl opacity-50" style="background: radial-gradient(circle, rgba(59,130,246,0.8) 0%, rgba(14,165,233,0.6) 50%, transparent 70%);"></div>
+    <div class="absolute bottom-20 left-1/4 w-72 h-72 rounded-full blur-3xl opacity-60" style="background: radial-gradient(circle, rgba(139,92,246,0.8) 0%, rgba(168,85,247,0.6) 50%, transparent 70%);"></div>
+    <div class="absolute bottom-10 right-1/3 w-88 h-88 rounded-full blur-3xl opacity-50" style="background: radial-gradient(circle, rgba(16,185,129,0.8) 0%, rgba(34,197,94,0.6) 50%, transparent 70%);"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full blur-3xl opacity-40" style="background: radial-gradient(circle, rgba(245,158,11,0.8) 0%, rgba(249,115,22,0.6) 50%, transparent 70%);"></div>
+    <div class="absolute top-1/3 right-1/4 w-56 h-56 rounded-full blur-3xl opacity-50" style="background: radial-gradient(circle, rgba(20,184,166,0.8) 0%, rgba(45,212,191,0.6) 50%, transparent 70%);"></div>
+  </div>
+  
+  <div class="container mx-auto px-6 py-24 relative">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div class="animate-fadeUp">
+        <h1 class="text-5xl md:text-6xl font-extrabold mb-6">
+          Enjoy Cafe
+        </h1>
+        <p class="mt-4 text-[var(--ec-muted)] text-lg mb-8">
+          Cafea de specialitate, vibe fresh, culori vii. Descoperă aroma perfectă în fiecare ceașcă.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a routerLink="/meniu" class="btn-primary text-center">
+            Vezi meniul
+          </a>
+          <a routerLink="/despre" class="px-5 py-3 rounded-2xl border border-emerald-500/40 hover:border-emerald-300/90 transition text-center">
+            Despre noi
+          </a>
+        </div>
+      </div>
+      
+      <div class="ec-card p-6 shadow-soft animate-floaty">
+        <img 
+          src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200&h=800&fit=crop&auto=format" 
+          alt="Ceașcă de cafea Enjoy Cafe" 
+          class="w-full rounded-3xl"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-16 relative overflow-hidden">
+  <!-- Colorful background -->
+  <div class="absolute inset-0">
+    <div class="absolute top-10 left-10 w-96 h-96 rounded-full blur-3xl opacity-60" style="background: radial-gradient(circle, rgba(236,72,153,0.8) 0%, rgba(244,63,94,0.6) 50%, transparent 70%);"></div>
+    <div class="absolute top-20 right-20 w-80 h-80 rounded-full blur-3xl opacity-50" style="background: radial-gradient(circle, rgba(59,130,246,0.8) 0%, rgba(14,165,233,0.6) 50%, transparent 70%);"></div>
+    <div class="absolute bottom-20 left-1/4 w-72 h-72 rounded-full blur-3xl opacity-60" style="background: radial-gradient(circle, rgba(139,92,246,0.8) 0%, rgba(168,85,247,0.6) 50%, transparent 70%);"></div>
+    <div class="absolute bottom-10 right-1/3 w-88 h-88 rounded-full blur-3xl opacity-50" style="background: radial-gradient(circle, rgba(16,185,129,0.8) 0%, rgba(34,197,94,0.6) 50%, transparent 70%);"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full blur-3xl opacity-40" style="background: radial-gradient(circle, rgba(245,158,11,0.8) 0%, rgba(249,115,22,0.6) 50%, transparent 70%);"></div>
+    <div class="absolute top-1/3 right-1/4 w-56 h-56 rounded-full blur-3xl opacity-50" style="background: radial-gradient(circle, rgba(20,184,166,0.8) 0%, rgba(45,212,191,0.6) 50%, transparent 70%);"></div>
+  </div>
+  
+  <div class="container mx-auto px-6 relative">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">De ce Enjoy Cafe?</h2>
+      <p class="text-[var(--ec-muted)] max-w-2xl mx-auto">
+        Oferim o experiență completă de cafea, de la boabele selectate până la prepararea perfectă.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="ec-card p-6 text-center hover:shadow-glow transition-all duration-300">
+        <div class="w-24 h-24 bg-gradient-to-br from-emerald-100 to-teal-100 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg border-2 border-emerald-200">
+          <img 
+            src="https://www.prwave.ro/wp-content/uploads/2020/11/kafune_logo.png" 
+            alt="Kafune Logo" 
+            class="w-16 h-16 object-contain drop-shadow-sm"
+            loading="lazy"
+          />
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-[var(--ec-text)]">Cafea Premium Kafune</h3>
+        <p class="text-[var(--ec-muted)] mb-4 leading-relaxed">Tri Mondi 100% Arabica - boabe selectate și prăjite proaspăt în fiecare zi</p>
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 rounded-full text-sm font-semibold border border-emerald-200">
+          <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
+          Parteneriat cu Kafune
+        </div>
+      </div>
+
+      <div class="ec-card p-6 text-center hover:shadow-glow transition-all duration-300">
+        <div class="w-24 h-24 bg-gradient-to-br from-emerald-100 to-teal-100 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg border-2 border-emerald-200">
+          <span class="material-icons text-emerald-600 text-3xl drop-shadow-sm">psychology</span>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-[var(--ec-text)]">Atmosferă Relaxantă</h3>
+        <p class="text-[var(--ec-muted)] mb-4 leading-relaxed">Un spațiu perfect pentru lucru, studiu sau întâlniri</p>
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 rounded-full text-sm font-semibold border border-emerald-200">
+          <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
+          Spațiu Premium
+        </div>
+      </div>
+
+      <div class="ec-card p-6 text-center hover:shadow-glow transition-all duration-300">
+        <div class="w-24 h-24 bg-gradient-to-br from-emerald-100 to-teal-100 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg border-2 border-emerald-200">
+          <span class="material-icons text-emerald-600 text-3xl drop-shadow-sm">favorite</span>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-[var(--ec-text)]">Pasțiune Autentică</h3>
+        <p class="text-[var(--ec-muted)] mb-4 leading-relaxed">Barista experți care îți pregătesc cafeaua cu dragoste</p>
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 rounded-full text-sm font-semibold border border-emerald-200">
+          <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
+          Barista Experți
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
